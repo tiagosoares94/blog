@@ -1,0 +1,140 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>4mid Marketing Indoor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/all.css">
+</head>
+
+<body onload="countComments()">
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo-alt.svg" alt="logo 4mid">
+      </a>
+      <nav class="header-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="add_post.html">Add Post</a></li>
+          <li><a href="manage_post.html">Management</a></li>
+          <li><a href="login.html">Sign in</a></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="featured-article">
+    <div class="container wrapper-article">
+      <div class="content col-md-10 offset-md-1">
+        <h1>Generate documentation for any React project using GatsbyJS</h1>
+        <p>
+            I recently was exploring different documentation solutions for design systems, and through my experimentation I created a template to create Gatsby documentation for any React project.
+
+            Write your documentation inline with your components as docblocks, and add more in-depth descriptions + live examples using MDX. Check out the demo here.
+
+            If you’re code is already documented, and your components are located in src/components -- then you're good to go! Clone this project into your codebase and let it rip! 🚀
+
+            Don’t have that setup? Don’t worry! I cover everything below 👇
+            Getting started
+
+            Install with Netlify
+
+            Install with Gatsby CLI
+
+                gatsby new docs https://github.com/whoisryosuke/gatsby-documentation-starter/
+
+            Install from Github
+
+                git clone https://github.com/whoisryosuke/gatsby-documentation-starter.git
+                Update gatsby-config.js with the location of your components + MDX (see: "Changing source folder")
+                npm install inside project
+                npm run develop
+                View your documentation: http://localhost:8000
+
+            Creating documentation
+
+            Documentation is sourced from two places: component source code and MDX files.
+
+            src
+            └── components
+                └── Button
+                    ├── Button.js
+                    └── Button.mdx
+
+            React-docgen grabs any JS Docblocks you write for your React classes/functions (Button.js), as well as the Prop Types. These are displayed on your documentation page, with the props organized in a table.
+
+            Inside your MDX file you can write additional documentation with JSX examples (like React components!). You can also specify the page slug here (a page name and category). Your pages will be generated as http://yoursite.com/
+
+            In order for your component data to show up, you need an MDX file for the component — and the page name and component name in the docblock need to match.
+
+                If you don’t want to create MDX files and generate pages directly from components/JS files — see the Github docs section: “Creating pages from react-docgen”. The reason I chose MDX foremost is the flexibility of the frontmatter, allowing you to create different “sections” for components (if you have elements vs typography for example).
+        </p>
+      </div>
+      <h2 style="margin: 15px 0; color:#40364d;" class="text-center">Comments <span id="totalComments"></span></h2>
+      <div class="comment comments col-md-10 offset-md-1">
+
+        <p><strong>Author: Linus Torvalds</strong><a href="#"><i class="float-right fas fa-trash-alt"></i></a></p>
+        <span>
+          Fuck you
+        </span>
+        <span style="position: absolute; bottom: 10px; right: 10px; font-size: 11px;">Date: 20/11/2018</span>
+
+      </div>
+
+      <div class="comment comments col-md-10 offset-md-1">
+
+        <p><strong>Author: Jimmy Neutron</strong><a href="#"><i class="float-right fas fa-trash-alt"></i></a></p>
+        <span>
+          Thanks for this post. I always appreciate good documentation!
+          I have been using a doc stack that integrates JSDoc with Gitbook (as you mentioned, there are other doc options available).
+        </span>
+        <span style="position: absolute; bottom: 10px; right: 10px; font-size: 11px;">Date: 20/11/2018</span>
+
+      </div>
+
+      <div class="comment comments col-md-10 offset-md-1">
+
+        <p><strong>Author: Jimmy Neutron</strong><a href="#"><i class="float-right fas fa-trash-alt"></i></a></p>
+        <span>
+          Thanks for this post. I always appreciate good documentation!Thanks for this post. I always appreciate good documentation!
+          I have been using a doc stack that in
+          I have been using a doc stack that integrates JSDoc with Gitbook (as you mentioned, there are other doc options available).
+        </span>
+        <span style="position: absolute; bottom: 10px; right: 10px; font-size: 11px;">Date: 20/11/2018</span>
+      </div>
+
+      <h2 style="margin: 15px 0; color:#40364d;" class="text-center">Reply</h2>
+      <div class="comments col-md-10 offset-md-1">
+        <textarea style="width: 100%" name="eqweqw" id="my-input" cols="30" placeholder="Type Here" maxlength="300" rows="3"></textarea>
+        <button class="float-right submit-btn">Submit</button><span id='remainingC'></span>
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <small>Copyright &#169; 2018 <strong>4mid</strong> - Todos Direitos Reservados</small>
+  </footer>
+
+  <script src="assets/js/jquery-1.9.1.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/js/general.js"></script>
+
+  <script>
+    function countComments(){
+      var total = document.getElementsByClassName("comment").length;
+      document.getElementById("totalComments").innerHTML = '<strong>(' + total + ')</strong>';
+    }
+  </script>
+
+</body>
+</html>
